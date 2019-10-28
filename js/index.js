@@ -43,8 +43,19 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 
 //Navigation
+const navArray = [siteContent['nav']['nav-item-1'], siteContent['nav']['nav-item-2'], siteContent['nav']['nav-item-3'], siteContent['nav']['nav-item-4'], siteContent['nav']['nav-item-5'], siteContent['nav']['nav-item-6']];
+const navigationLinks = document.querySelectorAll('a');
+navigationLinks.forEach((link, idx) => {
+  link.textContent = navArray[idx];
+  console.log(link, idx,);
+});
+
+console.log(navigationLinks);
 
 ///CTA
 const ctaImg =  document.querySelector('#cta-img');
 ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
-console.log(ctaImg);
+
+//Main-Content
+const middleImg =  document.querySelector('#middle-img');
+middleImg.setAttribute('src', siteContent['main-content']['middle-img-src']);
