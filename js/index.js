@@ -46,13 +46,12 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 const navArray = [siteContent['nav']['nav-item-1'], siteContent['nav']['nav-item-2'], siteContent['nav']['nav-item-3'], siteContent['nav']['nav-item-4'], siteContent['nav']['nav-item-5'], siteContent['nav']['nav-item-6']];
 
 const h4Arrays = [siteContent['main-content']['features-h4'], siteContent['main-content']['about-h4'], siteContent['main-content']['services-h4'], siteContent['main-content']['product-h4'], siteContent['main-content']['vision-h4'], siteContent['contact']['contact-h4'] ];
-console.log(h4Arrays);
 
 const mainContentArray =  [siteContent['main-content']['features-content'], siteContent['main-content']['about-content'], siteContent['main-content']['services-content'],siteContent['main-content']['product-content'], siteContent['main-content']['vision-content']];
 
+const contactContentArray = [siteContent['contact']['address'], siteContent['contact']['phone'], siteContent['contact']['email']];
+
 //Navigation
-
-
 const navigationLinks = document.querySelectorAll('a');
 
 navigationLinks.forEach((link, idx) => {
@@ -61,7 +60,6 @@ navigationLinks.forEach((link, idx) => {
 
 
 ///CTA
-
 const ctaHeading = document.querySelector('h1');
 ctaHeading.textContent = siteContent['cta']['h1'];
 
@@ -76,20 +74,36 @@ ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
 const middleImg =  document.querySelector('#middle-img');
 middleImg.setAttribute('src', siteContent['main-content']['middle-img-src']);
 
-const h4Headings = document.querySelectorAll('h4');
 
-h4Headings.forEach((heading, idx) => {
-  heading.style.textAlign = 'left';
-  heading.textContent = h4Arrays[idx];
-})
-console.log(h4Headings);
-
-const test =  document.querySelectorAll('.text-content');
-test[0].childNodes[3].textContent
-console.log(test[0].childNodes[3]);
+// const test =  document.querySelectorAll('.text-content');
+// test[0].childNodes[3].textContent
+// console.log(test[0].childNodes[3]);
 
 const mainContentTxt =  document.querySelectorAll('.text-content p');
 
 mainContentTxt.forEach((element, idx) => {
   element.textContent = mainContentArray[idx];
-})
+});
+
+
+//Content and Contact Headings
+const h4Headings = document.querySelectorAll('h4');
+
+h4Headings.forEach((heading, idx) => {
+  heading.style.textAlign = 'left';
+  heading.textContent = h4Arrays[idx];
+});
+
+
+//Contact 
+
+const contactTxt =  document.querySelectorAll('.contact p');
+contactTxt.forEach((element, idx) => {
+  element.textContent = contactContentArray[idx];
+});
+
+//Footer
+const footerContent = document.querySelector('footer p');
+footerContent.textContent = siteContent['footer']['copyright'];
+console.log(footerContent);
+
