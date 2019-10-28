@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": " ",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -53,15 +53,29 @@ const contactContentArray = [siteContent['contact']['address'], siteContent['con
 
 //Navigation
 const navigationLinks = document.querySelectorAll('a');
+const nav =  document.querySelector('nav');
 
 navigationLinks.forEach((link, idx) => {
+  link.style.color =  'green';
   link.textContent = navArray[idx];
 });
 
+///PREPEND NAV Link
+const homeLink =  document.createElement('a');
+nav.prepend(homeLink);
+homeLink.setAttribute('href', '#');
+homeLink.style.color =  'green';
+homeLink.textContent='Home';
+
+//APPEND NAV Link
+const otherLink =  document.createElement('a');
+nav.appendChild(otherLink);
+otherLink.style.color =  'green';
+otherLink.textContent = "Other";
 
 ///CTA
 const ctaHeading = document.querySelector('h1');
-ctaHeading.textContent = siteContent['cta']['h1'];
+ctaHeading.innerHTML = "Dom <br /> is <br /> Awesome";
 
 const ctaBtn = document.querySelector('button');
 ctaBtn.style.color= "black";
@@ -105,5 +119,5 @@ contactTxt.forEach((element, idx) => {
 //Footer
 const footerContent = document.querySelector('footer p');
 footerContent.textContent = siteContent['footer']['copyright'];
-console.log(footerContent);
+
 
