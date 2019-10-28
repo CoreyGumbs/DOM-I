@@ -44,15 +44,25 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 //Navigation
 const navArray = [siteContent['nav']['nav-item-1'], siteContent['nav']['nav-item-2'], siteContent['nav']['nav-item-3'], siteContent['nav']['nav-item-4'], siteContent['nav']['nav-item-5'], siteContent['nav']['nav-item-6']];
+
 const navigationLinks = document.querySelectorAll('a');
+
 navigationLinks.forEach((link, idx) => {
   link.textContent = navArray[idx];
-  console.log(link, idx,);
 });
 
-console.log(navigationLinks);
 
 ///CTA
+
+const ctaHeading = document.querySelector('h1');
+ctaHeading.textContent = siteContent['cta']['h1'];
+
+const ctaBtn = document.querySelector('button');
+ctaBtn.style.color= "black";
+ctaBtn.innerHTML = siteContent['cta']['button'];
+console.log(ctaBtn);
+
+console.log(ctaHeading);
 const ctaImg =  document.querySelector('#cta-img');
 ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
 
